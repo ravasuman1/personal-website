@@ -310,21 +310,21 @@ img {
   z-index: var(--z-back);
 }
 .skills__html {
-  width: 93%;
+  width: 95%;
 }
 .skills__css {
   width: 95%;
 }
 .skills__js {
-  width: 85%;
+  width: 95%;
 }
 .skills__ux {
-  width: 75%;
+  width: 90%;
 
   
 }
 .skills__react {
-  width: 65%;
+  width: 95%;
 }
 .skills__img {
   border-radius: 0.5rem;
