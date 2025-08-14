@@ -157,20 +157,35 @@
 
             <!--===== CONTACT =====-->
             <section class="contact section" id="contact">
-                <h2 class="section-title">Contact</h2>
-                 <p class="skills__text">
-                   Contact if you have some projects or head to my socials if you want to connect.
-                    </p>
+    <h2 class="section-title">Contact</h2>
+    <p class="skills__text">
+        Contact if you have some projects or head to my socials if you want to connect.
+    </p>
 
-                <div class="contact__container bd-grid">
-                    <form action="" class="contact__form">
-                        <input type="text" placeholder="Name" class="contact__input">
-                        <input type="mail" placeholder="Email" class="contact__input">
-                        <textarea name="" placeholder="Message" id="" cols="1" rows="5" class="contact__input"></textarea>
-                        <input type="button" value="Message" class="contact__button button">
-                    </form>
-                </div>
-            </section>
+    <div class="contact__container bd-grid">
+        <form class="contact__form" onsubmit="sendEmail(event)">
+            <input type="text" id="name" placeholder="Name" class="contact__input" required>
+            <input type="email" id="email" placeholder="Email" class="contact__input" required>
+            <textarea id="message" placeholder="Message" cols="1" rows="5" class="contact__input" required></textarea>
+            <input type="submit" value="Message" class="contact__button button">
+        </form>
+    </div>
+</section>
+
+<script>
+function sendEmail(event) {
+    event.preventDefault();
+
+    let name = document.getElementById('name').value;
+    let email = document.getElementById('email').value;
+    let message = document.getElementById('message').value;
+
+    let mailtoLink = `mailto:devemail@example.com?subject=Message from ${encodeURIComponent(name)}&body=${encodeURIComponent(message + "\n\nFrom: " + email)}`;
+
+    window.location.href = mailtoLink;
+}
+</script>
+
         </main>
 
         <!--===== FOOTER =====-->
@@ -192,3 +207,4 @@
         <script src="assets/js/main.js"></script>
     </body>
 </html>
+
